@@ -2,42 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Martin Hotel Chatbot</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Martin Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
-  <!-- 🫧 FLOATING LAUNCHER -->
-  <div id="chat-launcher">
-    <img src="images/chatbot-icon.png" alt="Open Chatbot">
+<body class="bg-white text-gray-800">
+
+  <!-- 🌐 Navbar -->
+  <nav class="flex items-center justify-between px-6 md:px-12 py-4 shadow">
+    <div class="text-xl font-bold text-blue-600">MartinChat</div>
+    <div class="hidden md:flex space-x-6 text-sm">
+      <a href="#home" class="hover:text-blue-600">Product</a>
+      <a href="#features" class="hover:text-blue-600">Features</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ✨ Hero Section -->
+  <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-16 fade-in">
+    
+    <!-- Text -->
+    <div class="max-w-xl text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        Build AI Chatbots in Minutes
+      </h1>
+      <p class="text-gray-600 mb-8 text-lg">
+        Create smart, elegant chatbots for hotels or any website. No platform limits — your code, your power.
+      </p>
+      <a href="martin_chatbot/index.html" class="bg-blue-600 text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition">
+        Launch Demo
+      </a>
+    </div>
+
+    <!-- Image -->
+    <div class="mt-10 md:mt-0 md:ml-12">
+      <img src="images/chatbot-landing.png" alt="Chatbot UI" class="w-full max-w-md drop-shadow-xl rounded-xl" />
+    </div>
+  </section>
+
+  <!-- 📦 Features Section -->
+  <section id="features" class="bg-gray-50 py-12 px-6 md:px-20">
+    <h2 class="text-2xl font-bold mb-6 text-center">Why Martin Chatbot?</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg">No Code? No Problem</h3>
+        <p class="text-gray-600 mt-2">Beginner-friendly logic powered by simple JavaScript rules.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg">Customizable UI</h3>
+        <p class="text-gray-600 mt-2">Tweak everything using HTML, CSS, and even Tailwind.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg">Offline & Free</h3>
+        <p class="text-gray-600 mt-2">No monthly costs. No server dependency. Just upload and go.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 Contact Section -->
+  <section id="contact" class="text-center py-16 px-6 md:px-20">
+    <h2 class="text-2xl font-bold mb-4">Want Help Integrating?</h2>
+    <p class="text-gray-600 mb-6">Reach out for personal setup support or training via GitHub, LinkedIn, or WhatsApp.</p>
+    <a href="mailto:youremail@example.com" class="text-blue-600 font-semibold underline">Send a message</a>
+  </section>
+
+  <!-- 🧾 Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6 border-t mt-12">
+    &copy; 2025 MartinChat. Built with Tailwind CSS & 💡
+  </footer>
+
+  <!-- 💬 Floating Chat Bubble -->
+  <div onclick="window.location.href='martin_chatbot/index.html'" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg cursor-pointer flex items-center justify-center hover:scale-110 transition">
+    <img src="images/chatbot-icon.png" alt="Chatbot" class="w-8 h-8">
   </div>
 
-  <!-- 💬 CHATBOT INTERFACE -->
-  <div class="chatbot-container hidden" id="chatbot-container">
-    <header class="chatbot-header">
-      <img src="images/chatbot-icon.png" alt="Bot-icon" class="bot-avatar"/>
-      <h1>Martin Hotel Chatbot</h1>
-      <button id="toggle-dark" class="dark-mode-toggle">🌙</button>
-      <button id="close-chat" title="Close Chat">✖</button>
-      <p class="online-status">🟢 Online</p>
-    </header>
-
-    <main class="chat-area" id="chat-area"></main>
-
-    <div id="typing-indicator" class="typing hidden">MartinBot is typing<span>.</span><span>.</span><span>.</span></div>
-
-    <div class="quick-replies" id="quick-replies"></div>
-
-    <form id="chat-form" class="chat-input-area">
-      <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off"/>
-      <button type="submit">Send</button>
-    </form>
-
-    <footer class="footer">
-      <small>© 2025 Martin Hotel System. Powered by Martin Chatbot.</small>
-    </footer>
-  </div>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
