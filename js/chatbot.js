@@ -26,6 +26,10 @@ function sendMessage() {
   }, 800);
 }
 
+function toggleChatbot() {
+  const chatbot = document.getElementById('chatbot-container');
+  chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
+}
 function getResponse(input) {
   input = input.toLowerCase();
   for (let keyword in responses) {
