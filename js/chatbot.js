@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatBody = document.getElementById("chatBody");
     const userInput = document.getElementById("userInput");
     const sendButton = document.getElementById("sendButton");
+    const chatBubble = document.getElementById("chatBubble");
+    const openChatButton = document.getElementById("openChatBubble");
+    const toggleMenu = document.getElementById("toggleMenu");
+    const chatMenu = document.getElementById("chatMenu");
+    const closeChat = document.getElementById("closeChat");
+    const closeMenu = document.getElementById("closeMenu");
 
     // Dictionary of responses for Las Vegas Garden Hotel
     const responses = {
@@ -59,9 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
     function addMessage(message, className) {
         const messageDiv = document.createElement("div");
         messageDiv.className = className;
-        messageDiv.textContent = message;
+        if (className.includes("bot-message") && !className.includes("typing")) {
+            messageDiv.textContent = message;
+        } else if (className.includes("typing")) {
+            messageDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+        } else {
+            messageDiv.textContent = message;
+        }
         chatBody.appendChild(messageDiv);
-        chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to bottom
+        chatBody.scrollTop = chatBody.scrollHeight;
     }
 
     // Function to get bot response
@@ -82,13 +94,48 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = userInput.value.trim();
         if (message) {
             addMessage(message, "user-message");
-            const response = getResponse(message);
-            setTimeout(() => addMessage(response, "bot-message"), 500); // Simulate typing delay
+            addMessage("", "bot-message typing");
+            setTimeout(() => {
+                chatBody.removeChild(chatBody.lastChild); // Remove typing indicator
+                const response = getResponse(message);
+                addMessage(response, "bot-message");
+            }, 1000); // 1-second typing animation
             userInput.value = "";
         }
     }
 
-    // Event listeners
+    // Toggle chat bubble visibility
+    if (openChatButton && chatBubble) {
+        openChatButton.addEventListener("click", () => {
+            chatBubble.classList.toggle("hidden");
+            openChatButton.classList.toggle("hidden");
+        });
+    }
+
+    if (closeChat) {
+        closeChat.addEventListener("click", () => {
+            chatBubble.classList.add("hidden");
+            openChatButton.classList.remove("hidden");
+            chatMenu.classList.remove("active");
+        });
+    }
+
+    // Toggle hamburger menu
+    if (toggleMenu && chatMenu) {
+        toggleMenu.addEventListener("click", () => {
+            chatMenu.classList.toggle("active");
+            toggleMenu.innerHTML = chatMenu.classList.contains("active") ? "&times;" : "&#9776;";
+        });
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener("click", () => {
+            chatMenu.classList.remove("active");
+            toggleMenu.innerHTML = "&#9776;";
+        });
+    }
+
+    // Event listeners for sending messages
     sendButton.addEventListener("click", sendMessage);
     userInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") sendMessage();
