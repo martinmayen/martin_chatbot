@@ -26,17 +26,7 @@ function sendMessage() {
   }, 800);
 }
 
-function toggleChatbot() {
-  const chatbot = document.getElementById('chatbot-container');
-  chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
-}
-function getResponse(input) {
-  input = input.toLowerCase();
-  for (let keyword in responses) {
-    if (input.includes(keyword)) return responses[keyword];
-  }
-  return "Sorry, I didn’t understand that. Please try again.";
-}
+
 
 function appendMessage(text, sender) {
   const msgDiv = document.createElement("div");
