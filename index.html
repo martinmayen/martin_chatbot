@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Martin Chatbot - Landing</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Chatbot - Las Vegas Garden Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Martin Chatbot</h1>
-    <p class="text-lg text-gray-600 mb-8 max-w-xl">A friendly hotel assistant chatbot built with HTML, CSS, JS — fully functional and hosted online.</p>
-    <img src="images/chatbot-landing.png" alt="Chatbot Preview" class="w-64 rounded shadow mb-6" />
-    <a href="chatbot.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded transition shadow-md">Launch Chatbot</a>
-  </section>
-
-  <!-- Floating Chatbot Bubble -->
-  <div onclick="window.location.href='chatbot.html'"
-    class="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 rounded-full shadow-lg cursor-pointer flex items-center justify-center hover:scale-110 transition">
-    <img src="images/chatbot-icon.png" alt="Chatbot" class="w-8 h-8" />
-  </div>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-green-600 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Welcome to Las Vegas Garden Hotel</h1>
+            <p class="mt-2 text-lg">Discover comfort in Kampala with Martin Chatbot!</p>
+        </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <section class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-semibold text-gray-800">Your Stay, Our Priority</h2>
+                <p class="mt-4 text-gray-600">
+                    Las Vegas Garden Hotel in Kampala offers top-notch hospitality. Chat with Martin Chatbot to learn about our rooms, dining, events, and more!
+                </p>
+                <a href="chatbot.html" class="mt-6 inline-block bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">
+                    Chat with Martin
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="images/chatbot-landing.png" alt="Las Vegas Garden Hotel" class="w-full max-w-md mx-auto">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Las Vegas Garden Hotel. Powered by Martin Chatbot.</p>
+        </div>
+    </footer>
 </body>
 </html>
