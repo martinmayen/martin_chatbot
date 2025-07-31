@@ -2,27 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Martin Hotel Chatbot</title>
   <link rel="stylesheet" href="css/chatbot.css" />
 </head>
 <body>
-  <div class="chatbot-container dark">
-    <div class="chat-header">
-      <h2>Martin Hotel Chatbot</h2>
-      <button id="toggle-dark">🌓</button>
+
+  <!-- Chatbot Launcher -->
+  <button id="chatbot-launcher" onclick="toggleChatbot()">💬</button>
+
+  <!-- Chatbot Container -->
+  <div id="chatbot-container" style="display: none;">
+    <!-- Chatbot Header -->
+    <div id="chatbot-header">
+      <h1>Martin Chatbot</h1>
+      <p>How can I assist you today?</p>
     </div>
-    <div class="chat-body" id="chat-body"></div>
+
+    <!-- Chat Window -->
+    <div id="chat-window">
+      <!-- Messages appear here dynamically -->
+    </div>
+
+    <!-- Quick Replies -->
     <div class="quick-replies" id="quick-replies">
-      <button onclick="handleQuickReply('Room Prices')">Prices</button>
-      <button onclick="handleQuickReply('Do you have WiFi?')">WiFi</button>
-      <button onclick="handleQuickReply('Reset')">Home</button>
+      <!-- Buttons will be inserted here dynamically -->
     </div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Ask me anything..." />
-      <button onclick="sendMessage()">Send</button>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Input Area -->
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="send-btn">Send</button>
     </div>
   </div>
+
+  <!-- JavaScript File -->
   <script src="js/chatbot.js"></script>
 </body>
 </html>
