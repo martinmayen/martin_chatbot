@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Martin Hotel Chatbot</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 🫧 FLOATING LAUNCHER -->
+  <div id="chat-launcher">
+    <img src="images/chatbot-icon.png" alt="Open Chatbot">
+  </div>
+
+  <!-- 💬 CHATBOT INTERFACE -->
+  <div class="chatbot-container hidden" id="chatbot-container">
+    <header class="chatbot-header">
+      <img src="https://i.imgur.com/7k12EPD.png" alt="Bot Avatar" class="bot-avatar"/>
+      <h1>Martin Hotel Chatbot</h1>
+      <button id="toggle-dark" class="dark-mode-toggle">🌙</button>
+      <button id="close-chat" title="Close Chat">✖</button>
+      <p class="online-status">🟢 Online</p>
+    </header>
+
+    <main class="chat-area" id="chat-area"></main>
+
+    <div id="typing-indicator" class="typing hidden">MartinBot is typing<span>.</span><span>.</span><span>.</span></div>
+
+    <div class="quick-replies" id="quick-replies"></div>
+
+    <form id="chat-form" class="chat-input-area">
+      <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off"/>
+      <button type="submit">Send</button>
+    </form>
+
+    <footer class="footer">
+      <small>© 2025 Martin Hotel System. Powered by Martin Chatbot.</small>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
