@@ -1,0 +1,38 @@
+/* 🫧 Chat launcher bubble */
+#chat-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 10px;
+}
+#chat-launcher img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hide or show */
+.hidden {
+  display: none !important;
+}
+
+/* ✖ Close chat */
+#close-chat {
+  position: absolute;
+  top: 12px;
+  right: 45px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Optional smoother open animation */
+.chatbot-container {
+  transition: all 0.3s ease;
+}
