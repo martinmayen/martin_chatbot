@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMenu = document.getElementById("chatMenu");
     const closeChat = document.getElementById("closeChat");
     const closeMenu = document.getElementById("closeMenu");
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
 
     // Dictionary of responses for Las Vegas Garden Hotel
     const responses = {
@@ -120,18 +122,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Toggle hamburger menu
+    // Toggle chat hamburger menu
     if (toggleMenu && chatMenu) {
         toggleMenu.addEventListener("click", () => {
             chatMenu.classList.toggle("active");
-            toggleMenu.innerHTML = chatMenu.classList.contains("active") ? "&times;" : "&#9776;";
+            toggleMenu.textContent = chatMenu.classList.contains("active") ? "×" : "≡";
         });
     }
 
     if (closeMenu) {
         closeMenu.addEventListener("click", () => {
             chatMenu.classList.remove("active");
-            toggleMenu.innerHTML = "&#9776;";
+            toggleMenu.textContent = "≡";
+        });
+    }
+
+    // Toggle homepage navigation menu
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            navToggle.textContent = navMenu.classList.contains("active") ? "×" : "≡";
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove("active");
+                navToggle.textContent = "≡";
+            }
         });
     }
 
