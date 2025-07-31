@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body class="bg-gray-100 font-sans">
-    <header class="bg-green-600 text-white py-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold">Welcome to Las Vegas Garden Hotel</h1>
-            <p class="mt-2 text-lg">Discover comfort in Kampala with Martin Chatbot!</p>
+    <header class="bg-green-600 text-white py-6 relative">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Las Vegas Garden Hotel</h1>
+            <div class="relative">
+                <button id="navToggle" class="hamburger text-2xl focus:outline-none">&equiv;</button>
+                <div id="navMenu" class="nav-menu hidden absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg">
+                    <a href="#about" class="block px-4 py-2 hover:bg-green-100 transition duration-300">About</a>
+                    <a href="mailto:info@lasvegasgardenhotel.com" class="block px-4 py-2 hover:bg-green-100 transition duration-300">Contact</a>
+                    <a href="chatbot.html" class="block px-4 py-2 hover:bg-green-100 transition duration-300">Chat</a>
+                </div>
+            </div>
         </div>
     </header>
     <main class="container mx-auto py-12 px-4">
@@ -42,12 +49,12 @@
             <div class="chat-header">
                 <img src="images/chatbot-icon.png" alt="Martin Chatbot Icon" class="chat-icon">
                 <h2 class="text-xl font-semibold">Martin Chatbot</h2>
-                <button id="toggleMenu" class="hamburger">&#9776;</button>
+                <button id="toggleMenu" class="hamburger text-2xl">&equiv;</button>
                 <div id="chatMenu" class="chat-menu hidden">
                     <button id="closeChat" class="close-btn">&times;</button>
-                    <a href="index.html" class="block py-2 px-4 hover:bg-gray-200">About</a>
-                    <a href="mailto:info@lasvegasgardenhotel.com" class="block py-2 px-4 hover:bg-gray-200">Contact</a>
-                    <a href="chatbot.html" class="block py-2 px-4 hover:bg-gray-200">Full Chat</a>
+                    <a href="index.html" class="block px-4 py-2 hover:bg-green-100 transition duration-300">About</a>
+                    <a href="mailto:info@lasvegasgardenhotel.com" class="block px-4 py-2 hover:bg-green-100 transition duration-300">Contact</a>
+                    <a href="chatbot.html" class="block px-4 py-2 hover:bg-green-100 transition duration-300">Full Chat</a>
                 </div>
             </div>
             <div class="chat-body" id="chatBody">
